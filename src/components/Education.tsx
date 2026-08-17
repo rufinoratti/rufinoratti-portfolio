@@ -16,7 +16,7 @@ const education: TimelineItem[] = [
     subtitle: "Universidad Argentina de la Empresa (UADE)",
     period: "2023 - Actualidad",
     description:
-      "Carrera universitaria enfocada en la gestión de proyectos tecnológicos, análisis de sistemas y liderazgo de equipos de desarrollo.<br/>24/41 Materias aprobadas. Promedio: 7.57",
+      "Carrera universitaria enfocada en la gestión de proyectos tecnológicos, análisis de sistemas y liderazgo de equipos de desarrollo.<br/>26/41 Materias aprobadas. Promedio: 7.63",
   },
 ];
 

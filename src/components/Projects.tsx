@@ -6,11 +6,11 @@ import { motion, useReducedMotion } from "motion/react";
 
 const projects = [
   {
-    title: "PassNow - Tu Ticketera amiga (En desarrollo)",
+    title: "PassNow - Tu Ticketera amiga",
     description:
       "Aplicación transaccional para la compra y gestión de entradas de eventos nocturnos. Permite a los usuarios descubrir fiestas y boliches por categorías, reservar sus lugares y pagar de forma segura e inmediata para recibir una entrada digital con código QR. Incluye además un panel privado para que los organizadores puedan crear sus propios eventos, controlar las ventas y escanear los accesos directamente en la puerta.",
     tags: ["Next.js", "React", "Tailwind CSS", "Supabase", "MercadoPago", "Resend", "QR Code", "Zod"],
-    url: "",
+    url: "https://passnow.com.ar",
     image: "/passnow.png",
     featured: true,
   },
@@ -29,6 +29,14 @@ const projects = [
     tags: ["React", "TypeScript", "Tailwind CSS"],
     url: "https://ratti-capponi.vercel.app/",
     image: "/ratticapponi.png",
+  },
+  {
+    title: "Adolfina Lorenzetti - Portafolio",
+    description:
+      "Portafolio profesional para una diseñadora de interiores, pensado para presentar proyectos, servicios y formas de contacto con una estética cálida, editorial y enfocada en los espacios.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    url: "https://adolfina-lorenzetti-portfolio.vercel.app/",
+    image: "/adolfina-lorenzetti.png",
   },
   {
     title: "Florentina Cora - Joyería de Autor",
@@ -55,11 +63,11 @@ const projects = [
     image: "/proveedor.png",
   },
   {
-    title: "La trastienda de Ver - Tienda Online (En desarrollo)",
+    title: "La trastienda de Ver - Tienda Online",
     description:
       "Tienda online para La Trastienda de Ver, un emprendimiento multimarca especializado en carteras, mochilas y accesorios. Diseño minimalista enfocado en la experiencia de usuario, con catálogo estructurado por marcas, gestión de stock, optimización SEO para buscadores y logística integrada con envíos a todo el país.",
     tags: ["TiendaNube", "E-Commerce", "Diseño Web"],
-    url: "https://proveedor-vin.vercel.app/",
+    url: "https://latrastiendadever.mitiendanube.com/",
     image: "/latranstienda.png",
   },
 ];
@@ -94,7 +102,7 @@ export default function Projects() {
               <img
                 src={featured.image}
                 alt={featured.title}
-                className={`h-full w-full object-cover transition-transform duration-500 ease-out-expo group-hover:scale-105 ${isInDevelopment ? "blur-md" : ""}`}
+                className={`h-full w-full object-contain p-4 transition-transform duration-500 ease-out-expo group-hover:scale-[1.01] ${isInDevelopment ? "blur-md" : ""}`}
                 loading="lazy"
               />
               <div className={`absolute inset-0 ${isInDevelopment ? "bg-gradient-to-t from-black/80 via-black/50 to-black/30" : "bg-gradient-to-t from-black/60 via-black/20 to-transparent"}`} aria-hidden="true" />

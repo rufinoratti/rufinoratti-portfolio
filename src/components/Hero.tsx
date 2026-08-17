@@ -44,7 +44,7 @@ export default function Hero() {
             {...anim(0.35)}
             className="mb-8 text-lg text-muted md:text-xl"
           >
-            Desarrollador Front-End | Estudiante de Licenciatura en Gestión de Tecnología de la Información en UADE
+            Desarrollador Front-End | Fundador de PassNow | Estudiante de Licenciatura en Gestión de Tecnología de la Información en UADE
           </motion.p>
           <motion.div
             {...anim(0.5)}
