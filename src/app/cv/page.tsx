@@ -121,7 +121,7 @@ export default function CurriculumPage() {
                   Universidad Argentina de la Empresa (UADE)
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
-                  26 de 41 materias aprobadas · promedio 7,63.
+                  28 de 41 materias aprobadas · promedio 7,63.
                 </p>
               </div>
             </article>
