@@ -1,5 +1,3 @@
-"use client";
-
 import { Reveal } from "@/components/motion";
 
 type TimelineItem = {
@@ -16,7 +14,7 @@ const education: TimelineItem[] = [
     subtitle: "Universidad Argentina de la Empresa (UADE)",
     period: "2023 - Actualidad",
     description:
-      "Carrera universitaria enfocada en la gestión de proyectos tecnológicos, análisis de sistemas y liderazgo de equipos de desarrollo.<br/>26/41 Materias aprobadas. Promedio: 7.63",
+      "Carrera enfocada en gestión de proyectos tecnológicos, análisis de sistemas y liderazgo de equipos. 26 de 41 materias aprobadas · promedio 7,63.",
   },
 ];
 
@@ -26,12 +24,10 @@ const experience: TimelineItem[] = [
     subtitle: "Remoto",
     period: "Jul 2023 – Actualidad",
     highlights: [
-      "Desarrollo de interfaces web responsivas con React.js, HTML, CSS y Tailwind CSS.",
-      "Creación de sitios y aplicaciones priorizando usabilidad, rendimiento y accesibilidad.",
-      "Implementación de componentes reutilizables y estructuras escalables para frontend y backend.",
-      "Optimización de tiempos de carga y performance mediante recursos eficientes y diseño responsive.",
-      "Trabajo directo con clientes de distintos rubros, gestionando requerimientos y entregables de forma autónoma.",
-      "Uso de Framer para desarrollo de sitios con enfoque visual e interacción.",
+      "Desarrollo de sitios y aplicaciones web con React, Next.js, Tailwind CSS y herramientas modernas.",
+      "Implementación de interfaces, integraciones y estructuras reutilizables para frontend y backend.",
+      "Priorización de usabilidad, rendimiento, accesibilidad y diseño responsive.",
+      "Trabajo directo con clientes: relevamiento, definición de alcance y entrega de soluciones.",
     ],
   },
   {
@@ -39,12 +35,9 @@ const experience: TimelineItem[] = [
     subtitle: "Sector gastronómico y eventos",
     period: "Experiencia previa",
     highlights: [
-      "Gestión de stock e insumos, optimizando costos y reduciendo desperdicios.",
-      "Coordinación operativa de barra en eventos y establecimientos gastronómicos.",
-      "Planificación de pedidos, control de proveedores y logística de abastecimiento.",
-      "Supervisión y organización de equipos de trabajo.",
-      "Capacitación de personal y asignación de tareas.",
-      "Atención al cliente en entornos de alta demanda.",
+      "Gestión de stock, pedidos y proveedores en contextos de alta demanda.",
+      "Coordinación operativa de equipos en eventos y establecimientos gastronómicos.",
+      "Atención al cliente y resolución de necesidades en tiempo real.",
     ],
   },
 ];
@@ -66,10 +59,9 @@ function Timeline({
               <h3 className="font-medium text-ink">{item.title}</h3>
               <p className="mt-1 text-sm text-muted">{item.subtitle}</p>
               {item.description && (
-                <p
-                  className="mt-3 text-sm leading-relaxed text-muted/80"
-                  dangerouslySetInnerHTML={{ __html: item.description }}
-                />
+                <p className="mt-3 text-sm leading-relaxed text-muted/80">
+                  {item.description}
+                </p>
               )}
               {item.highlights && (
                 <ul className="mt-4 space-y-2.5">

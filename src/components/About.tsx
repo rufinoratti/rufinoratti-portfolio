@@ -1,5 +1,3 @@
-"use client";
-
 import { Reveal } from "@/components/motion";
 
 export default function About() {
@@ -13,10 +11,12 @@ export default function About() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="max-w-[65ch] text-lg leading-relaxed text-muted">
-            Soy Rufino, desarrollador full stack y estudiante de Gestión de Tecnología de la Información en la UADE.
-            Construyo sitios y aplicaciones web con foco en la experiencia del usuario: que se vean bien, carguen rápido y sean fáciles de usar.
-            Trabajo de forma independiente con clientes de distintos rubros, acompañando proyectos desde el diseño hasta la implementación. 
-            Uso principalmente React.js y Framer, y me interesa cada vez más el cruce entre diseño y tecnología.
+            Soy Rufino, desarrollador full stack y estudiante de Gestión de
+            Tecnología de la Información en UADE. Desarrollo productos web de
+            punta a punta: desde interfaces claras hasta integraciones y lógica
+            de negocio. Trabajo de forma independiente con clientes de distintos
+            rubros, acompañando cada proyecto desde la idea hasta su puesta en
+            producción.
           </p>
         </Reveal>
       </div>
