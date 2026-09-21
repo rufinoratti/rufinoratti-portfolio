@@ -22,13 +22,13 @@ const education: TimelineItem[] = [
 
 const experience: TimelineItem[] = [
   {
-    title: "Desarrollador Front-end Freelance",
+    title: "Desarrollador Full Stack Freelance",
     subtitle: "Remoto",
     period: "Jul 2023 – Actualidad",
     highlights: [
       "Desarrollo de interfaces web responsivas con React.js, HTML, CSS y Tailwind CSS.",
       "Creación de sitios y aplicaciones priorizando usabilidad, rendimiento y accesibilidad.",
-      "Implementación de componentes reutilizables y estructuras escalables de frontend.",
+      "Implementación de componentes reutilizables y estructuras escalables para frontend y backend.",
       "Optimización de tiempos de carga y performance mediante recursos eficientes y diseño responsive.",
       "Trabajo directo con clientes de distintos rubros, gestionando requerimientos y entregables de forma autónoma.",
       "Uso de Framer para desarrollo de sitios con enfoque visual e interacción.",

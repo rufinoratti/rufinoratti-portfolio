@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rufino Ratti | Portfolio",
   description:
-    "Analista de Sistemas · Desarrollador Frontend. Portfolio profesional.",
+    "Analista de Sistemas · Desarrollador Full Stack. Portfolio profesional.",
 };
 
 export default function RootLayout({
