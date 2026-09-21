@@ -80,54 +80,60 @@ export default function Projects() {
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <h2 className="mb-12 text-2xl font-semibold tracking-tight sm:text-3xl">
-            Proyectos seleccionados
+            Proyectos
           </h2>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <a
-            href={featured.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-2xl border border-border transition-[border-color,transform] duration-200 ease-out-expo hover:-translate-y-0.5 hover:border-ink/30 active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-          >
-            <div className="relative aspect-[16/9] overflow-hidden bg-subtle">
-              <Image
-                src={featured.image}
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-contain p-4 transition-transform duration-300 ease-out-expo group-hover:scale-[1.01]"
-              />
+          <div className="relative">
+            <div className="pointer-events-none absolute -inset-4 -z-10" aria-hidden="true">
+              <div className="h-full w-full rounded-[32px] bg-gradient-to-br from-accent/10 via-accent/5 to-transparent blur-2xl" />
             </div>
-            <div className="p-6 sm:p-8">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-ink">
-                    {featured.title}
-                  </h3>
-                  <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">
-                    {featured.description}
-                  </p>
-                </div>
-                <ArrowUpRight
-                  weight="bold"
-                  className="mt-1 h-5 w-5 shrink-0 text-muted transition-[color,transform] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"
-                  aria-hidden="true"
+            <a
+              href={featured.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block overflow-hidden rounded-2xl border border-border transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0_0_0_/_0.06)] active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden bg-subtle">
+                <Image
+                  src={featured.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="object-contain p-4 transition-transform duration-500 ease-out-expo group-hover:scale-[1.01]"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" aria-hidden="true" />
               </div>
-              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Tecnologías utilizadas">
-                {featured.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full bg-accent-muted/30 px-3 py-1 text-xs font-medium text-accent"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </a>
+              <div className="p-6 sm:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-ink">
+                      {featured.title}
+                    </h3>
+                    <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">
+                      {featured.description}
+                    </p>
+                  </div>
+                  <ArrowUpRight
+                    weight="bold"
+                    className="mt-1 h-5 w-5 shrink-0 text-muted transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"
+                    aria-hidden="true"
+                  />
+                </div>
+                <ul className="mt-4 flex flex-wrap gap-2" aria-label="Tecnologías utilizadas">
+                  {featured.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-full bg-accent-muted/30 px-3 py-1 text-xs font-medium text-accent"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </a>
+          </div>
         </Reveal>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -137,7 +143,7 @@ export default function Projects() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col overflow-hidden rounded-xl border border-border transition-[border-color,transform] duration-200 ease-out-expo hover:-translate-y-0.5 hover:border-ink/30 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-border transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0_0_0_/_0.06)] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
                 <div className="relative aspect-[3/2] overflow-hidden bg-subtle">
                   <Image
@@ -145,7 +151,7 @@ export default function Projects() {
                     alt=""
                     fill
                     sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 ease-out-expo group-hover:scale-[1.02]"
+                    className="object-cover transition-transform duration-500 ease-out-expo group-hover:scale-105"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
@@ -153,7 +159,7 @@ export default function Projects() {
                     <h3 className="font-medium text-ink">{project.title}</h3>
                     <ArrowUpRight
                       weight="bold"
-                      className="mt-0.5 h-4 w-4 shrink-0 text-muted transition-[color,transform] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-muted transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"
                       aria-hidden="true"
                     />
                   </div>

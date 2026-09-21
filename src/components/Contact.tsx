@@ -6,6 +6,10 @@ import { Reveal } from "@/components/motion";
 export default function Contact() {
   return (
     <section id="contacto" className="relative px-6 py-24 sm:py-32">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-muted/15 blur-[140px]" />
+      </div>
+
       <div className="relative mx-auto max-w-2xl text-center">
         <Reveal>
           <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">
