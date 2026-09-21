@@ -51,6 +51,39 @@ section[id] {
   scroll-margin-top: 5rem;
 }
 
+.tech-marquee-mask {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 2.5rem,
+    black calc(100% - 2.5rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 2.5rem,
+    black calc(100% - 2.5rem),
+    transparent
+  );
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

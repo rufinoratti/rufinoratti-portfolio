@@ -131,8 +131,8 @@ export default function Projects() {
         </Reveal>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {rest.map((project) => (
-            <RevealStagger key={project.title}>
+          {rest.map((project, index) => (
+            <RevealStagger key={project.title} staggerIndex={index}>
               <a
                 href={project.url}
                 target="_blank"
