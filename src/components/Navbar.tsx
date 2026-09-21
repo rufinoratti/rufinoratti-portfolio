@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { List, X } from "@phosphor-icons/react";
+import Link from "next/link";
 
 const links = [
   { href: "#inicio", label: "Inicio" },
@@ -105,6 +106,13 @@ export default function Navbar() {
           ))}
         </ul>
 
+        <Link
+          href="/cv"
+          className="hidden rounded-full border border-border px-4 py-2 text-sm font-medium text-ink transition-[border-color,transform] duration-200 ease-out-expo hover:border-ink active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:block"
+        >
+          Ver CV
+        </Link>
+
         <AnimatePresence>
           {open && (
             <motion.div
@@ -132,6 +140,15 @@ export default function Navbar() {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href="/cv"
+                    onClick={() => setOpen(false)}
+                    className="block rounded-xl px-4 py-3 text-sm font-medium text-ink transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  >
+                    Ver CV
+                  </Link>
+                </li>
               </ul>
             </motion.div>
           )}
