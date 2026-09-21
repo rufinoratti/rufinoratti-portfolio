@@ -35,20 +35,32 @@ export default function Navbar() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/70 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a
           href="#inicio"
-          className="font-mono text-sm font-semibold tracking-tight text-ink"
+          className="font-mono text-sm font-semibold tracking-tight text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         >
           RR
         </a>
 
         <button
-          className="relative z-10 sm:hidden"
+          type="button"
+          className="relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-full sm:hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           onClick={() => setOpen(!open)}
-          aria-label="Menú"
+          aria-controls="mobile-navigation"
+          aria-expanded={open}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
         >
           {open ? (
             <X className="h-5 w-5 text-ink" weight="bold" />
@@ -60,7 +72,11 @@ export default function Navbar() {
         <ul className="hidden items-center gap-1 sm:flex">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="relative block px-4 py-2 text-sm">
+              <a
+                href={link.href}
+                aria-current={active === link.href ? "page" : undefined}
+                className="relative block rounded-full px-4 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              >
                 {active === link.href &&
                   (reduce ? (
                     <span className="absolute inset-0 rounded-full bg-subtle" />
@@ -92,9 +108,10 @@ export default function Navbar() {
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={reduce ? false : { opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
+              id="mobile-navigation"
+              initial={reduce ? false : { opacity: 0, transform: "translateY(-8px)" }}
+              animate={{ opacity: 1, transform: "translateY(0)" }}
+              exit={{ opacity: 0, transform: "translateY(-8px)" }}
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="absolute top-full left-4 right-4 mt-2 rounded-2xl border border-border bg-surface/95 backdrop-blur-xl p-2 sm:hidden"
             >
@@ -104,7 +121,8 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className={`block rounded-xl px-4 py-3 text-sm transition-colors duration-200 ${
+                      aria-current={active === link.href ? "page" : undefined}
+                      className={`block rounded-xl px-4 py-3 text-sm transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                         active === link.href
                           ? "bg-subtle font-medium text-ink"
                           : "text-muted hover:text-ink"

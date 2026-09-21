@@ -1,7 +1,3 @@
-"use client";
-
-import { useReducedMotion } from "motion/react";
-
 const technologies = [
   "React",
   "Next.js",
@@ -19,41 +15,19 @@ const technologies = [
 ];
 
 export default function TechMarquee() {
-  const reduce = useReducedMotion();
-
-  if (reduce) {
-    return (
-      <section className="border-y border-border px-6 py-6">
-        <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-x-8 gap-y-2">
-          {technologies.map((tech) => (
-            <span
-              key={tech}
-              className="whitespace-nowrap text-sm font-medium text-muted"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  const doubled = [...technologies, ...technologies];
-
   return (
-    <section
-      className="overflow-hidden border-y border-border py-5"
-      aria-label="Tecnologías"
-    >
-      <div className="animate-marquee flex w-max items-center gap-10">
-        {doubled.map((tech, i) => (
-          <span
-            key={`${tech}-${i}`}
-            className="whitespace-nowrap text-sm font-medium text-muted"
-          >
-            {tech}
-          </span>
-        ))}
+    <section className="border-y border-border px-6 py-6" aria-labelledby="tecnologias">
+      <div className="mx-auto max-w-5xl">
+        <h2 id="tecnologias" className="sr-only">
+          Tecnologías principales
+        </h2>
+        <ul className="flex flex-wrap justify-center gap-x-7 gap-y-2">
+          {technologies.map((tech) => (
+            <li key={tech} className="text-sm font-medium text-muted">
+              {tech}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
